@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generated Modules</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Generated Modules</h1>
+    <form action="/module" method="post">
+        {% for module in modules %}
+            <h2>{{ module.module_name }}</h2>
+            <p>{{ module.module_description }}</p>
+            <input type="hidden" name="module_name" value="{{ module.module_name }}">
+            <input type="hidden" name="module_description" value="{{ module.module_description }}">
+            <button type="submit">Accept Module</button>
+        {% endfor %}
+    </form>
+</body>
+</html>

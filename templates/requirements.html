@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Requirements Setup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Setup Project Requirements</h1>
+    <form action="/requirements" method="post">
+        <label for="packages">Enter Required Packages (space-separated):</label>
+        <input type="text" id="packages" name="packages" required><br>
+        <button type="submit">Install Packages</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Setup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Setup Your Project</h1>
+    <form action="/project" method="post">
+        <label for="project_name">Project Name:</label>
+        <input type="text" id="project_name" name="project_name" required><br>
+        <label for="project_description">Project Description:</label>
+        <input type="text" id="project_description" name="project_description" required><br>
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>

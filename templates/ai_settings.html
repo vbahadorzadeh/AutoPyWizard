@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Settings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Setup AI Settings</h1>
+    <form action="/set-ai-settings" method="post">
+        <label for="ai_provider">AI Provider:</label>
+        <select id="ai_provider" name="ai_provider" required>
+            <option value="gpt4all">gpt4all</option>
+            <option value="openai">OpenAI</option>
+        </select><br>
+        <label for="model_name">Model Name:</label>
+        <input type="text" id="model_name" name="model_name" required><br>
+        <div id="openai_settings" style="display: none;">
+            <label for="api_key">OpenAI API Key:</label>
+            <input type="text" id="api_key" name="api_key"><br>
+            <label for="base_url">OpenAI Base URL:</label>
+            <input type="text" id="base_url" name="base_url"><br>
+        </div>
+        <button type="submit">Next</button>
+    </form>
+    <script>
+        document.getElementById('ai_provider').addEventListener('change', function() {
+            var openaiSettings = document.getElementById('openai_settings');
+            if (this.value === 'openai') {
+                openaiSettings.style.display = 'block';
+            } else {
+                openaiSettings.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
